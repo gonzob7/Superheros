@@ -1,4 +1,5 @@
 import random
+from random import choice
 
 class Hero:
     # We want our hero to have a default "starting_health",
@@ -18,6 +19,8 @@ class Hero:
 
         self.deaths = 0
         self.kills = 0
+
+        self.isWinner = False
 
 
 
@@ -98,11 +101,13 @@ class Hero:
             opponent.take_damage(self.attack())
         if self.is_alive() and not opponent.is_alive():
             print(self.name, 'won!')
+            self.isWinner = True
             self.add_kill(1)
-            opponent.add_deaths(1)
+            opponent.add_death(1)
         elif opponent.is_alive() and not self.is_alive():
             opponent.add_kill(1)
-            self.add_deaths(1)
+            self.add_death(1)
+            opponent.isWinner = True
             print(opponent.name, 'won!')
         else:
             print('Draw!')
@@ -213,7 +218,7 @@ class Team:
         # TODO: for each hero in self.heroes,
         # set the hero's current_health to their starting_health
         for hero in self.heroes:
-            hero.current_health = starting_health
+            hero.current_health = hero.starting_health
         pass
 
     def attack(self, other_team):
@@ -231,12 +236,14 @@ class Team:
         while len(living_heroes) > 0 and len(living_opponents)> 0:
             # TODO: Complete the following steps:
             # 1) Randomly select a living hero from each team (hint: look up what random.choice does)
-            hero1 = choice(self.team_members_alive())
-            hero2 = choice(other_team.team_members_alive())
+            hero1 = choice(self.heroes)
+            hero2 = choice(other_team.heroes)
             # 2) have the heroes fight each other (Hint: Use the fight method in the Hero class.)
             hero1.fight(hero2)
             # 3) update the list of living_heroes and living_opponents
             # to reflect the result of the fight
+            living_heroes.remove(hero1)
+
 
 if __name__ == "__main__":
     # If you run this file from the terminal
