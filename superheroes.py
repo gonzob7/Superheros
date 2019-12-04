@@ -27,12 +27,24 @@ class Armor:
             max_block: Integer
         '''
         # TODO: Create instance variables for the values passed in.
+        self.name = name
+        self.max_block = max_block
+        pass
+
+    def block(self):
+        '''
+        Return a random value between 0 and the
+        initialized max_block strength.
+        '''
+
+        random_value = random.randint(0, self.max_block)
+        return random_value
         pass
 
 
 if __name__ == "__main__":
     # If you run this file from the terminal
     # this block is executed.
-    ability = Ability("Debugging Ability", 20)
-    print(ability.name)
-    print(ability.attack())
+    armor = Armor("Debugging Shield", 10)
+    print(armor.name)
+    print(armor.block())
