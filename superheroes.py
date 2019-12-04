@@ -242,8 +242,13 @@ class Team:
             hero1.fight(hero2)
             # 3) update the list of living_heroes and living_opponents
             # to reflect the result of the fight
-            living_heroes.remove(hero1)
-
+            if hero1.isWinner == True:
+                living_opponents.remove(hero2)
+            elif hero2.isWinner == True:
+                living_heroes.remove(hero1)
+            else:
+                living_heroes.remove(hero1)
+                living_opponents.remove(hero2)
 
 if __name__ == "__main__":
     # If you run this file from the terminal
