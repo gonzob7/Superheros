@@ -314,6 +314,42 @@ class Arena:
                create_armor()
         return hero
 
+    def build_team_one(self):
+        '''Prompt the user to build team_one '''
+        # TODO: This method should allow a user to create team one.
+        # 1) Prompt the user for the name of the team
+        team_name = input("What is the name for team 1?: ")
+        # 2) Prompt the user for the number of Heroes on the team
+        num_heroes = int(input("How many heroes on this team?: "))
+        # 3) Instantiate a new Team object,
+        # using the team name obtained from user input
+        team1 = Team(team_name)
+        # 4) use a loop to call self.create_hero() for the number
+        # of heroes the user specified the team should have,
+        # and then add the heroes to the team.
+        for i in range(0, num_heroes):
+            hero = self.create_hero()
+            team1.add_hero(hero)
+        pass
+
+    def build_team_two(self):
+        '''Prompt the user to build team_two'''
+        # TODO: This method should allow a user to create team one.
+        # 1) Prompt the user for the name of the team
+        team_name = input("What is the name for team 1?: ")
+        # 2) Prompt the user for the number of Heroes on the team
+        num_heroes = int(input("How many heroes on this team?: "))
+        # 3) Instantiate a new Team object,
+        # using the team name obtained from user input
+        team2 = Team(team_name)
+        # 4) use a loop to call self.create_hero() for the number
+        # of heroes the user specified the team should have,
+        # and then add the heroes to the team.
+        for i in range(0, num_heroes):
+            hero = self.create_hero()
+            team2.add_hero(hero)
+        pass
+
 if __name__ == "__main__":
     # If you run this file from the terminal
     # this block is executed.
