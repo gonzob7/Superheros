@@ -294,6 +294,26 @@ class Arena:
         return Armor(name, max_block)
         pass
 
+    def create_hero(self):
+        '''Prompt user for Hero information
+          return Hero with values from user input.
+        '''
+        hero_name = input("Hero's name: ")
+        hero = Hero(hero_name)
+        add_item = None
+        while add_item != "4":
+           add_item = input("[1] Add ability\n[2] Add weapon\n[3] Add armor\n[4] Done adding items\n\nYour choice: ")
+           if add_item == "1":
+               #TODO add an ability to the hero
+               create_ability()
+           elif add_item == "2":
+               #TODO add a weapon to the hero
+               create_weapon()
+           elif add_item == "3":
+               #TODO add an armor to the hero
+               create_armor()
+        return hero
+
 if __name__ == "__main__":
     # If you run this file from the terminal
     # this block is executed.
