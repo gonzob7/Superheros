@@ -178,6 +178,13 @@ class Team:
                 print(hero.name)
             pass
 
+    def add_hero(self, hero):
+      '''Add Hero object to self.heroes.'''
+      # TODO: Add the Hero object that is passed in to the list of heroes in
+      # self.heroes
+      self.heroes.append(hero)
+      pass
+
 if __name__ == "__main__":
     # If you run this file from the terminal
     # this block is executed.
