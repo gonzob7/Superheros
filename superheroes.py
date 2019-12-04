@@ -64,6 +64,27 @@ class Hero:
         defense = self.defend()
         self.current_health -= damage - defense
 
+
+    def fight(self, opponent):
+      # TODO: Fight each hero until a victor emerges.
+      # Phases to implement:
+      # 0) check if at least one hero has abilities. If no hero has abilities, print "Draw"
+        while self.is_alive() and opponent.is_alive():
+            self.take_damage(opponent.attack())
+            opponent.take_damage(self.attack())
+        if self.is_alive() and not opponent.is_alive():
+            print(self.name, 'won!')
+        elif opponent.is_alive() and not self.is_alive():
+            print(opponent.name, 'won!')
+        else:
+            print('Draw!')
+      # 1) else, start the fighting loop until a hero has won
+      # 2) the hero (self) and their opponent must attack each other and each must take damage from the other's attack
+      # 3) After each attack, check if either the hero (self) or the opponent is alive
+      # 4) if one of them has died, print "HeroName won!" replacing HeroName with the name of the hero, and end the fight loop
+        pass
+
+
 class Ability:
     def __init__(self, name, attack_strength):
         '''
@@ -107,10 +128,14 @@ class Armor:
 
 
 if __name__ == "__main__":
-    # If you run this file from the terminal
-    # this block of code is executed.
-    hero = Hero("Grace Hopper", 200)
-    hero.take_damage(150)
-    print(hero.is_alive())
-    hero.take_damage(15000)
-    print(hero.is_alive())
+    hero1 = Hero("Wonder Woman")
+    hero2 = Hero("Dumbledore")
+    ability1 = Ability("Super Speed", 300)
+    ability2 = Ability("Super Eyes", 130)
+    ability3 = Ability("Wizard Wand", 80)
+    ability4 = Ability("Wizard Beard", 20)
+    hero1.add_ability(ability1)
+    hero1.add_ability(ability2)
+    hero2.add_ability(ability3)
+    hero2.add_ability(ability4)
+    hero1.fight(hero2)
