@@ -270,6 +270,18 @@ class Arena:
 
         return Ability(name, max_damage)
 
+    def create_weapon(self):
+        '''Prompt user for Weapon information
+            return Weapon with values from user input.
+        '''
+        # TODO: This method will allow a user to create a weapon.
+        # Prompt the user for the necessary information to create a new weapon object.
+        # return the new weapon object.
+        name = input("What is the weapon name?: ")
+        max_damage = input("What is the max damage of this weapon?: ")
+        return Weapon(name, max_damage)
+        pass
+
 if __name__ == "__main__":
     # If you run this file from the terminal
     # this block is executed.
