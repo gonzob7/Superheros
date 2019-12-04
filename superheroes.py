@@ -49,6 +49,13 @@ class Hero:
           total_block = total_block + armor.block()
       return total_block
 
+    def is_alive(self):
+        if self.current_health <= 0:
+            return False
+        else:
+            return True
+        pass
+
 
     def take_damage(self, damage):
 
@@ -103,7 +110,7 @@ if __name__ == "__main__":
     # If you run this file from the terminal
     # this block of code is executed.
     hero = Hero("Grace Hopper", 200)
-    shield = Armor("Shield", 50)
-    hero.add_armor(shield)
-    hero.take_damage(50)
-    print(hero.current_health)
+    hero.take_damage(150)
+    print(hero.is_alive())
+    hero.take_damage(15000)
+    print(hero.is_alive())
