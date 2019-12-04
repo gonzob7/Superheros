@@ -261,6 +261,15 @@ class Arena:
         self.team_one = None
         self.team_two = None
 
+    def create_ability(self):
+        '''Prompt for Ability information.
+            return Ability with values from user Input
+        '''
+        name = input("What is the ability name?: ")
+        max_damage = input("What is the max damage of the ability?: ")
+
+        return Ability(name, max_damage)
+
 if __name__ == "__main__":
     # If you run this file from the terminal
     # this block is executed.
