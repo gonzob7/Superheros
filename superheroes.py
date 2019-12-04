@@ -208,6 +208,14 @@ class Team:
             kd = hero.kills / hero.deaths
             print("{} Kill/Deaths:{}".format(hero.name,kd))
 
+    def revive_heroes(self):
+        ''' Reset all heroes health to starting_health'''
+        # TODO: for each hero in self.heroes,
+        # set the hero's current_health to their starting_health
+        for hero in self.heroes:
+            hero.current_health = starting_health
+        pass
+
 if __name__ == "__main__":
     # If you run this file from the terminal
     # this block is executed.
