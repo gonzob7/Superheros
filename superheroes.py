@@ -323,13 +323,13 @@ class Arena:
         num_heroes = int(input("How many heroes on this team?: "))
         # 3) Instantiate a new Team object,
         # using the team name obtained from user input
-        team1 = Team(team_name)
+        team_one = Team(team_name)
         # 4) use a loop to call self.create_hero() for the number
         # of heroes the user specified the team should have,
         # and then add the heroes to the team.
         for i in range(0, num_heroes):
             hero = self.create_hero()
-            team1.add_hero(hero)
+            team_one.add_hero(hero)
         pass
 
     def build_team_two(self):
@@ -341,13 +341,21 @@ class Arena:
         num_heroes = int(input("How many heroes on this team?: "))
         # 3) Instantiate a new Team object,
         # using the team name obtained from user input
-        team2 = Team(team_name)
+        team_two = Team(team_name)
         # 4) use a loop to call self.create_hero() for the number
         # of heroes the user specified the team should have,
         # and then add the heroes to the team.
         for i in range(0, num_heroes):
             hero = self.create_hero()
-            team2.add_hero(hero)
+            team_two.add_hero(hero)
+        pass
+
+    def team_battle(self):
+        '''Battle team_one and team_two together.'''
+        # TODO: This method should battle the teams together.
+        # Call the attack method that exists in your team objects
+        # for that battle functionality.
+        team_one.attack(team_two)
         pass
 
 if __name__ == "__main__":
