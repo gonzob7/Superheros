@@ -10,17 +10,24 @@ class Ability:
         # Assign the "name" and "max_damage"
         # for a specific instance of the Ability class
         self.name = name
-        self.max_damage = max_damage
+        self.attack_strength = attack_strength
 
-      def attack(self):
-          ''' Return a value between 0 and the value set by self.max_damage.'''
+    def attack(self):
+      ''' Return a value between 0 and the value set by self.max_damage.'''
 
-          # Pick a random value between 0 and self.max_damage
-          random_value = random.randint(0,self.max_damage)
-          return random_value
+      # Pick a random value between 0 and self.max_damage
+      random_value = random.randint(0,self.attack_strength)
+      return random_value
 
 
-
+class Armor:
+    def __init__(self, name, max_block):
+        '''Instantiate instance properties.
+            name: String
+            max_block: Integer
+        '''
+        # TODO: Create instance variables for the values passed in.
+        pass
 
 
 if __name__ == "__main__":
