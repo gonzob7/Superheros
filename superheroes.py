@@ -250,6 +250,17 @@ class Team:
                 living_heroes.remove(hero1)
                 living_opponents.remove(hero2)
 
+class Arena:
+    def __init__(self):
+        '''Instantiate properties
+            team_one: None
+            team_two: None
+        '''
+        # TODO: create instance variables named team_one and team_two that
+        # will hold our teams.
+        self.team_one = None
+        self.team_two = None
+
 if __name__ == "__main__":
     # If you run this file from the terminal
     # this block is executed.
