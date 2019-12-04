@@ -35,7 +35,11 @@ class Hero:
         # return the total damage
         return total_damage
 
+    def add_armor(self, armor):
+      # TODO: Add armor object that is passed in to `self.armors`
+      self.armors.append(armor)
 
+      
 class Ability:
     def __init__(self, name, attack_strength):
         '''
