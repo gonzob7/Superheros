@@ -202,6 +202,12 @@ class Team:
       self.heroes.append(hero)
       pass
 
+    def stats(self):
+        '''Print team statistics'''
+        for hero in self.heroes:
+            kd = hero.kills / hero.deaths
+            print("{} Kill/Deaths:{}".format(hero.name,kd))
+
 if __name__ == "__main__":
     # If you run this file from the terminal
     # this block is executed.
