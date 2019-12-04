@@ -98,7 +98,11 @@ class Hero:
             opponent.take_damage(self.attack())
         if self.is_alive() and not opponent.is_alive():
             print(self.name, 'won!')
+            self.add_kill(1)
+            opponent.add_deaths(1)
         elif opponent.is_alive() and not self.is_alive():
+            opponent.add_kill(1)
+            self.add_deaths(1)
             print(opponent.name, 'won!')
         else:
             print('Draw!')
