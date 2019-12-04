@@ -39,6 +39,8 @@ class Hero:
       # TODO: Add armor object that is passed in to `self.armors`
       self.armors.append(armor)
 
+
+
     def defend(self):
       '''Calculate the total block amount from all armor blocks.
          return: total_block:Int
@@ -126,6 +128,17 @@ class Armor:
         return random_value
         pass
 
+class Weapon(Ability):
+    def attack(self):
+
+        """  This method returns a random value
+        between one half to the full attack power of the weapon.
+        """
+        # TODO: Use integer division to find half of the max_damage value
+        # then return a random integer between half of max_damage and max_damage
+        random_value = random.randint((self.attack_strength//2),self.attack_strength)
+        return random_value
+        pass
 
 if __name__ == "__main__":
     hero1 = Hero("Wonder Woman")
