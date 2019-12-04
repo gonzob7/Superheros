@@ -39,7 +39,16 @@ class Hero:
       # TODO: Add armor object that is passed in to `self.armors`
       self.armors.append(armor)
 
-      
+    def defend(self, damage_amt):
+      '''Calculate the total block amount from all armor blocks.
+         return: total_block:Int
+      '''
+      # TODO: This method should run the block method on each armor in self.armors
+
+      for armor in self.armors:
+          damage_amt = damage_amt + armor.block()
+      return damage_amt
+
 class Ability:
     def __init__(self, name, attack_strength):
         '''
@@ -91,3 +100,4 @@ if __name__ == "__main__":
     hero.add_ability(ability)
     hero.add_ability(another_ability)
     print(hero.attack())
+    print(hero.defend(30))
