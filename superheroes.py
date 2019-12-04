@@ -25,6 +25,15 @@ class Hero:
         # we're not adding strings, instead we'll add ability objects.
         self.abilities.append(ability)
 
+    def add_weapon(self, weapon):
+        '''Add weapon to self.abilities'''
+        # TODO: This method will append the weapon object passed in as an
+        # argument to self.abilities.
+        # This means that self.abilities will be a list of
+        # abilities and weapons.
+        self.abilities.append(weapon)
+        pass
+        
     def attack(self):
       # start our total out at 0
         total_damage = 0
