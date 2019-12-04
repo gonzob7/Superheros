@@ -171,6 +171,12 @@ class Team:
         if not foundHero:
             return 0
 
+    def view_all_heroes(self):
+            '''Prints out all heroes to the console.'''
+            # TODO: Loop over the list of heroes and print their names to the terminal one by one.
+            for hero in self.heroes:
+                print(hero.name)
+            pass
 
 if __name__ == "__main__":
     # If you run this file from the terminal
