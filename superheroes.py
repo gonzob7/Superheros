@@ -70,10 +70,16 @@ class Hero:
         else:
             return True
         pass
-        
+
     def add_kill(self, num_kills):
         ''' Update self.kills by num_kills amount'''
         self.kills += num_kills
+
+    def add_death(self, num_deaths):
+        ''' Update deaths with num_deaths'''
+        # TODO: This method should add the number of deaths to self.deaths
+        self.deaths += num_deaths
+        pass
 
     def take_damage(self, damage):
 
