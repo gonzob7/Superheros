@@ -282,6 +282,18 @@ class Arena:
         return Weapon(name, max_damage)
         pass
 
+    def create_armor(self):
+        '''Prompt user for Armor information
+          return Armor with values from user input.
+        '''
+        # TODO:This method will allow a user to create a piece of armor.
+        #  Prompt the user for the necessary information to create a new armor object.
+        #  return the new armor object with values set by user.
+        name = input("What is the armor name?: ")
+        max_block = input("What is the max block of this armor?: ")
+        return Armor(name, max_block)
+        pass
+
 if __name__ == "__main__":
     # If you run this file from the terminal
     # this block is executed.
