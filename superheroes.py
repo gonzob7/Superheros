@@ -216,6 +216,28 @@ class Team:
             hero.current_health = starting_health
         pass
 
+    def attack(self, other_team):
+        ''' Battle each team against each other.'''
+
+        living_heroes = list()
+        living_opponents = list()
+
+        for hero in self.heroes:
+            living_heroes.append(hero)
+
+        for hero in other_team.heroes:
+            living_opponents.append(hero)
+
+        while len(living_heroes) > 0 and len(living_opponents)> 0:
+            # TODO: Complete the following steps:
+            # 1) Randomly select a living hero from each team (hint: look up what random.choice does)
+            hero1 = choice(self.team_members_alive())
+            hero2 = choice(other_team.team_members_alive())
+            # 2) have the heroes fight each other (Hint: Use the fight method in the Hero class.)
+            hero1.fight(hero2)
+            # 3) update the list of living_heroes and living_opponents
+            # to reflect the result of the fight
+
 if __name__ == "__main__":
     # If you run this file from the terminal
     # this block is executed.
