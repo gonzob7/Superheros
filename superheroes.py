@@ -100,7 +100,6 @@ class Hero:
             self.take_damage(opponent.attack())
             opponent.take_damage(self.attack())
         if self.is_alive() and not opponent.is_alive():
-            print(self.name, 'won!')
             self.isWinner = True
             self.add_kill(1)
             opponent.add_death(1)
@@ -108,14 +107,12 @@ class Hero:
             opponent.add_kill(1)
             self.add_death(1)
             opponent.isWinner = True
-            print(opponent.name, 'won!')
         else:
-            print('Draw!')
+            pass
       # 1) else, start the fighting loop until a hero has won
       # 2) the hero (self) and their opponent must attack each other and each must take damage from the other's attack
       # 3) After each attack, check if either the hero (self) or the opponent is alive
       # 4) if one of them has died, print "HeroName won!" replacing HeroName with the name of the hero, and end the fight loop
-        pass
 
 
 class Ability:
@@ -371,10 +368,29 @@ class Arena:
         #     Declare winning team
         #     Show both teams average kill/death ratio.
         # Some help on how to achieve these tasks:
+        alive_heroes = list()
+        alive_opponents = list()
         # TODO: for each team, loop through all of their heroes,
         # and use the is_alive() method to check for alive heroes,
         # printing their names and increasing the count if they're alive.
         #
+
+        for hero in self.team_one.heroes:
+            if hero.is_alive():
+                alive_heroes.append(hero)
+
+        for hero in self.team_two.heroes:
+            if hero.is_alive():
+                alive_opponents.append(hero)
+        print("STATS")
+        print("Heroes that survived: ")
+        for hero in alive_heroes:
+            print("-"+hero.name)
+        print("----------------------")
+        print("Enemies that survived: ")
+        for hero in alive_opponents:
+            print("-"+hero.name)
+        print("----------------------")
         # TODO: based off of your count of alive heroes,
         # you can see which team has more alive heroes, and therefore,
         # declare which team is the winning team
@@ -382,6 +398,13 @@ class Arena:
         # TODO for each team, calculate the total kills and deaths for each hero,
         # find the average kills and deaths by dividing the totals by the number of heroes.
         # finally, divide the average number of kills by the average number of deaths for each team
+        if len(alive_heroes) > len(alive_opponents):
+            print(f"Victory goes to {self.team_one.name}")
+        elif len(alive_heroes) < len(alive_opponents):
+            print(f"Victory goes to {self.team_two.name}")
+        else:
+            print("It's a draw.")
+        print("----------------------")
         print(f'Team One KDR: {self.team_one.stats()}')
         print(f'Team Two KDR: {self.team_two.stats()} \n')
         pass
